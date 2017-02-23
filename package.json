@@ -1,0 +1,23 @@
+{
+  "name": "nyc-protests",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.10.0",
+    "eslint-plugin-react": "^6.6.0",
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "aphrodite": "^1.1.0",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "spawn-sync": "^1.0.15"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
