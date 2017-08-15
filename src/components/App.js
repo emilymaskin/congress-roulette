@@ -45,12 +45,16 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <div className={css(styles.wrapper)}>
+          <h1 className={css(styles.h1)}>
+            <div>Donate</div>
+            <div className={css(styles.script)}>Charlottesville</div>
+          </h1>
           {this.state.recipient
             ? <div>
-                <h1 className={css(styles.h1)}>You should donate to:</h1>
-                <h2 className={css(styles.h2)}>
+                <h2 className={css(styles.h2)}>You should donate to:</h2>
+                <h3 className={css(styles.h3)}>
                   {this.state.recipient.name}
-                </h2>
+                </h3>
                 <div>
                   <a
                     href={this.state.recipient.url}
@@ -67,8 +71,8 @@ export default class App extends React.Component {
               </div>
             : <div>
                 <h2 className={css(styles.h2)}>
-                  Looking to help out in the wake of the Charlottesville
-                  attacks, but not sure where to send your money?
+                  Looking to help out in the wake of the attacks, but not sure
+                  where to send your money?
                 </h2>
                 <div onClick={this.spinWheel} className={css(styles.button)}>
                   Spin the wheel
@@ -83,18 +87,29 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   wrapper: {
     textAlign: 'center',
-    padding: 100,
-    maxWidth: 700,
+    padding: 40,
+    maxWidth: 600,
     margin: '0 auto',
   },
   h1: {
-    marginBottom: 40,
     fontWeight: 400,
+    fontSize: 50,
+    lineHeight: 1,
+    marginBottom: 100,
+  },
+  script: {
+    fontFamily: "'Dancing Script', cursive",
+    fontSize: 100,
   },
   h2: {
-    marginBottom: 40,
     fontWeight: 400,
     lineHeight: 1.5,
+  },
+  h3: {
+    marginBottom: 40,
+    fontWeight: 400,
+    fontSize: 24,
+    lineHeight: 1.3,
   },
   button: {
     background: '#6D8B9C',
@@ -107,7 +122,7 @@ const styles = StyleSheet.create({
     MozUserSelect: 'none',
     userSelect: 'none',
     textDecoration: 'none',
-    marginBottom: 20,
+    margin: 40,
     color: '#fff',
     fontSize: 30,
     fontWeight: 200,
