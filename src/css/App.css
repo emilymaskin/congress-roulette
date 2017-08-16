@@ -1,12 +1,13 @@
 .App {
-  font-family: Futura, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'franklin-gothic-urw-comp', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  padding: 20px;
-  margin: 0 auto;
-  line-height: 1.3em;
-  color: '#002642';
-  letter-spacing: 0.3px;
+  background: #000;
+  letter-spacing: 1.3px;
+  color: #fff;
 }
 
 a {
