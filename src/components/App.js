@@ -20,9 +20,9 @@ export default class App extends React.Component {
     const recipient = this.getRandomRecipient();
 
     if (
-      recipient
-      && this.state.recipient
-      && recipient.name === this.state.recipient.name
+      recipient &&
+      this.state.recipient &&
+      recipient.name === this.state.recipient.name
     ) {
       this.spinWheel();
     }
@@ -49,6 +49,12 @@ export default class App extends React.Component {
     return recipients[randomIndex];
   }
 
+  onClickGoBack = () => {
+    this.setState({
+      currentPage: 'landing',
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -58,7 +64,7 @@ export default class App extends React.Component {
             <div>Charlottesville</div>
           </h1>
           {this.state.currentPage === 'list'
-            ? <RecipientList />
+            ? <RecipientList onClickGoBack={this.onClickGoBack} />
             : <div>
                 <div className={css(styles.divider)} />
                 {this.state.recipient

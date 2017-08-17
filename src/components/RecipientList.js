@@ -14,7 +14,7 @@ export default class RecipientList extends React.Component {
             </a>,
           )}
         </div>
-        <div onClick={this.goBack} className={css(styles.goBack)}>
+        <div onClick={this.props.onClickGoBack} className={css(styles.goBack)}>
           Go back
         </div>
       </div>
