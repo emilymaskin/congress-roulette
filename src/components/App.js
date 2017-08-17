@@ -4,6 +4,7 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import '../css/App.css';
 import { recipients } from '../recipients';
+import RecipientList from './RecipientList';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
 
     this.state = {
       recipient: null,
+      currentPage: 'landing',
     };
   }
 
@@ -28,6 +30,12 @@ export default class App extends React.Component {
 
     this.setState({
       recipient,
+    });
+  };
+
+  viewList = () => {
+    this.setState({
+      currentPage: 'list',
     });
   };
 
@@ -49,35 +57,51 @@ export default class App extends React.Component {
             <div>Donate</div>
             <div>Charlottesville</div>
           </h1>
-          <div className={css(styles.divider)} />
-          {this.state.recipient
-            ? <div>
-                <h2 className={css(styles.h2)}>You should donate to:</h2>
-                <h3 className={css(styles.h3)}>
-                  {this.state.recipient.name}
-                </h3>
-                <div>
-                  <a
-                    href={this.state.recipient.url}
-                    target="_blank"
-                    className={css(styles.button)}
-                    onClick={this.onClickDonate}
-                  >
-                    Donate here
-                  </a>
-                </div>
-                <div onClick={this.spinWheel} className={css(styles.spinAgain)}>
-                  Spin again
-                </div>
-              </div>
+          {this.state.currentPage === 'list'
+            ? <RecipientList />
             : <div>
-                <h2 className={css(styles.h2)}>
-                  Looking to help out in the wake of the attacks, but not sure
-                  where to send your money?
-                </h2>
-                <div onClick={this.spinWheel} className={css(styles.button)}>
-                  Spin the wheel
-                </div>
+                <div className={css(styles.divider)} />
+                {this.state.recipient
+                  ? <div>
+                      <h2 className={css(styles.h2)}>You should donate to:</h2>
+                      <h3 className={css(styles.h3)}>
+                        {this.state.recipient.name}
+                      </h3>
+                      <div>
+                        <a
+                          href={this.state.recipient.url}
+                          target="_blank"
+                          className={css(styles.button)}
+                          onClick={this.onClickDonate}
+                        >
+                          Donate here
+                        </a>
+                      </div>
+                      <div
+                        onClick={this.spinWheel}
+                        className={css(styles.spinAgain)}
+                      >
+                        Spin again
+                      </div>
+                    </div>
+                  : <div>
+                      <h2 className={css(styles.h2)}>
+                        Looking to help out in the wake of the attacks, but not
+                        sure where to send your money?
+                      </h2>
+                      <div
+                        onClick={this.spinWheel}
+                        className={css(styles.button)}
+                      >
+                        Spin the wheel
+                      </div>
+                      <div
+                        onClick={this.viewList}
+                        className={css(styles.spinAgain)}
+                      >
+                        View all
+                      </div>
+                    </div>}
               </div>}
         </div>
       </div>
