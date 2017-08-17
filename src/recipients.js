@@ -136,4 +136,26 @@ export const recipients = [
     name: 'Islamic Society of Central Virginia',
     url: 'http://www.charlottesvillemasjid.com/support-us.html',
   },
+  {
+    name: 'Southern Poverty Law Center',
+    url: 'https://donate.splcenter.org/page.aspx?pid=463',
+  },
+  {
+    name: 'Life after Hate',
+    url: 'https://www.lifeafterhate.org/donate',
+  },
+  {
+    name:
+      "Medical fund for Marcus Martin, who was severely injured in the attack while saving his fiancée's life",
+    url: 'https://www.gofundme.com/marcus-martin',
+  },
+  {
+    name:
+      'Medical fund for Allie, a counterprotestor who was severely injured in the car attack',
+    url: 'https://www.gofundme.com/49l4x3c',
+  },
+  {
+    name: 'Stop Hate Project',
+    url: 'https://lawyerscommittee.org/make-a-donation/',
+  },
 ];
